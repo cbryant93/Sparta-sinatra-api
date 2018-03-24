@@ -12,9 +12,10 @@ class StaticController < Sinatra::Base
   json = HTTParty.get("https://api.punkapi.com/v2/beers").body
 
   @all_beers = JSON.parse(json)
-   @all_beers.each do |beers|
+   @all_beers.each do |beer|
    end
-  end
+
+end
 
   # Landing Page
   get '/' do

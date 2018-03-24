@@ -17,8 +17,9 @@ class Beerio
     SingleBeerService.new
   end
 
+
 end
 
 x = Beerio.new
 
-print x.single_beer_service.single_beer_response(1)
+# print x.single_beer_service.single_beer_response(1)
