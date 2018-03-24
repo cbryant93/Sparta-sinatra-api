@@ -23,8 +23,8 @@ before(:all) do
 end
 
 it "Beer id is an Integer" do
-   @allresponse.first.each do |key, array|
-
+   @allresponse.each do |key, array|
+     p key['name']
     end
 end
 
