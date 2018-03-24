@@ -1,0 +1,67 @@
+body{
+  margin-top: 100px;
+
+}
+
+h1, h2{
+  text-align: center;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+.Form{
+  margin-left: 300px;
+}
+
+.show img{
+  width: 200px;
+  height: 200px;
+}
+
+.title a{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+  background-color: #E3EAED;
+}
+
+.navbar-default .navbar-brand{
+  color: black;
+}
+.navbar-header {
+    text-align: center;
+    width: 100%;
+
+}
+.navbar-default .navbar-nav > li > a{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+.navbar-brand {
+  float:none;
+}
+
+.navbar-text{
+  float:none;
+}
+
+
+.navbar-header h1{
+  font-size: 50px;
+  color: black;
+}
+
+.container-fluid{
+  background: #E3EAED;
+}
+
+.jumbotron{
+  background-color: #E3EAED;
+}
