@@ -1,18 +1,24 @@
 require "json"
 require "httparty"
-require_relative "./services/beer_service"
+require_relative "./services/all_beers_service"
+require_relative "./services/single_beer_service"
+
 
 class Beerio
   include HTTParty
 
   base_uri "https://api.punkapi.com/v2/"
 
-  def beer_service
-    BeerService.new
+  def all_beers_service
+    AllBeersService.new
+  end
+
+  def single_beer_service
+    SingleBeerService.new
   end
 
 end
 
 x = Beerio.new
 
-print x.beer_service.beer_response
+print x.single_beer_service.single_beer_response(1)
