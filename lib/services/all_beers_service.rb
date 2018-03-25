@@ -2,13 +2,22 @@ require 'httparty'
 require 'json'
 
 class AllBeersService
+
+  attr_reader :json_beer_file
+
   include HTTParty
 
   base_uri "https://api.punkapi.com/v2/"
 
   def all_beers_response
-    JSON.parse(self.class.get("https://api.punkapi.com/v2/beers").body)
+    @json_beer_file = JSON.parse(self.class.get("https://api.punkapi.com/v2/beers").body)
 
+  end
+
+  def all_names
+    json_beer_file.each do |key, array|
+       key['name']
+     end
   end
 
 end

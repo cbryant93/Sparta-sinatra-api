@@ -16,6 +16,7 @@ class Beerio
   def single_beer_service
     SingleBeerService.new
   end
+  
 
 
 end
