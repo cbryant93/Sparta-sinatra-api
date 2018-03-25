@@ -14,10 +14,4 @@ class AllBeersService
 
   end
 
-  def all_names
-    json_beer_file.each do |key, array|
-       key['name']
-     end
-  end
-
 end
