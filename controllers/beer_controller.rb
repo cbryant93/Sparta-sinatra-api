@@ -1,3 +1,5 @@
+require_relative '../lib/beer'
+
 class BeerController < Sinatra::Base
 
   set :root, File.join(File.dirname(__FILE__), '..')
@@ -9,22 +11,18 @@ class BeerController < Sinatra::Base
   end
 
   def index
-  json = HTTParty.get("https://api.punkapi.com/v2/beers").body
 
-  @all_beers = JSON.parse(json)
+    before(:all) do
+      @beerio = Beerio.new
+      $allresponse = @beerio.all_beers_service.all_beers_response
+    end
 
   end
 
   # Landing Page
   post '/' do
 
-    @all_beers = $beers
-
-    new_post = {
-      @all_beers["name"] => params[:name]
-    }
-
-    $beers.push(new_post)
+    @allresponse = $allresponse
 
     redirect "/"
 

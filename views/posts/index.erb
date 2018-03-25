@@ -1,1 +1,4 @@
 <h1>PUNK BEERS</h1>
+<% @allresponse.each do |key, array| %>
+  <h3><%=key['name']%></h3>
+ <% end %>
