@@ -10,16 +10,16 @@ describe Beerio do
     @beerio.single_beer_response(1)
   end
 
-  it "Beer id is an Integer" do
-    expect(@beerio.beer_id).to be_a(Integer)
+  it "Beer id should be 1" do
+    expect(@beerio.beer_id).to eq(1)
   end
 
   it "Beer name is a String" do
     expect(@beerio.name).to be_a(String)
   end
 
-  it "First brewed date should be 7 characters long" do
-    expect(@beerio.first_brewed.length).to eq(7)
+  it "First brewed date should be 09/2007" do
+    expect(@beerio.first_brewed).to eq("09/2007")
   end
 
   it "abv and ibu should be a number" do
@@ -30,6 +30,8 @@ describe Beerio do
   it "name of beer should be buzz" do
     expect(@beerio.name).to eq("Buzz")
   end
+
+
 
 
 
@@ -135,8 +137,40 @@ it "All measurement values should be a number" do
       end
 end
 
+it "All Beers must have an Image" do
+   @allresponse.each do |key, array|
+      expect(key['image_url']).to be_truthy
+    end
+end
 
+it "All Beers should have maximum 4 food pairings" do
+   @allresponse.each do |key, array|
+      expect(key['food_pairing'].length).to be_between(1,4)
+    end
+end
 
+it "All flavours must be either an Aroma, Bitter or a Flavour " do
+
+    @allresponse.each do |key, value|
+      arr = []
+       key["ingredients"]["hops"].each do |key, value|
+        arr << key["attribute"]
+        expect(arr).to  include(key["attribute"])
+       end
+     end
+end
+
+it "All dates should be 7 characters long" do
+  @allresponse.each do |key, array|
+     expect(key['first_brewed'].length).to eq(7)
+   end
+end
+
+it "All beers should have a tagline" do
+  @allresponse.each do |key, array|
+     expect(key['tagline']).to be_truthy
+   end
+end
 end
 
 end
