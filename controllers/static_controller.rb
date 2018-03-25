@@ -49,15 +49,4 @@ class StaticController < Sinatra::Base
 
 end
 
-# put '/:id'  do
-#
-#   @beerio = Beerio.new
-#
-#   $single_response = @beerio.single_beer_service.single_beer_response(:id)
-#
-#
-#   redirect '/'
-#
-#   end
-
 end
