@@ -7,6 +7,11 @@ h1, h2{
   text-align: center;
 }
 
+h2{
+ font-style: italic;
+ font-size: 100px;
+}
+
 img{
   width: 100px;
   height: 100px;
@@ -64,4 +69,8 @@ img{
 
 .jumbotron{
   background-color: #E3EAED;
+}
+
+#picture{
+  width: 100px;
 }

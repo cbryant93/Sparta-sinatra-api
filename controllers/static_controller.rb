@@ -23,4 +23,41 @@ class StaticController < Sinatra::Base
 
     erb :'posts/index'
   end
+
+  post '/' do
+
+    @allresponse = $allresponse
+
+    redirect "/"
+
+  end
+
+  get '/:id' do
+
+    @title = "Beer Info"
+
+    id = params[:id]
+
+    @beerio = Beerio.new
+
+
+    $single_response = @beerio.single_beer_service.single_beer_response(id)
+
+    @single_response = $single_response
+
+    erb :'posts/show'
+
+end
+
+# put '/:id'  do
+#
+#   @beerio = Beerio.new
+#
+#   $single_response = @beerio.single_beer_service.single_beer_response(:id)
+#
+#
+#   redirect '/'
+#
+#   end
+
 end

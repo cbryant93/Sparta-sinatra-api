@@ -1,4 +1,9 @@
 <h1>PUNK BEERS</h1>
+<div class="container">
+
+
 <% @allresponse.each do |key, array| %>
-  <h3><%=key['name']%></h3>
+  <h3><a href='/<%= key['id']%>'><%=key['name']%></a></h3>
  <% end %>
+
+ </div>
