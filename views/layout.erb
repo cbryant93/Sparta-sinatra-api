@@ -10,7 +10,10 @@
   <title><%= @title %></title>
 </head>
 <body>
+
+  <%= erb(:'partials/nav', :layout => false) %>
   <div class="container">
+
 
    <!-- our template content will be injected here -->
    <%= yield %>
