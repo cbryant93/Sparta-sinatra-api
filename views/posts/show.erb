@@ -1,40 +1,42 @@
 <h1><%=@single_response[0]['name']%></h1>
 <h3 class="text-center"><%=@single_response[0]['tagline']%></h3>
-<h4 class="text-center">Brewed since: <%=@single_response[0]['first_brewed']%></h4>
+<h4 class="text-center">Brewed since:
+  <%=@single_response[0]['first_brewed']%></h4>
 
-
-<div class="row col-md-12">
-<img src="/<%=@single_response[0]['image_url']%>" alt="Beer" id="picture">
+<div class="row">
+  <div class="col-md-12">
+    <img class="center-block" src="<%=@single_response[0]['image_url']%>" alt="Beer" id="picture">
+  </div>
 </div>
 <div class="row">
   <div class="col-md-6">
     <h3>Description</h3>
-    <p><%=@single_response[0]['description']%></p>
+      <p><%=@single_response[0]['description']%></p>
 
-    <h3>Try this beer with the following food: </h3>
-    <%@single_response[0]['food_pairing'].each do |key,array|%>
-    <p><%=key %></p>
-    <% end %>
-
+    <h3>Try this beer with the following food:
+    </h3>
+      <%@single_response[0]['food_pairing'].each do |key,array|%>
+        <p><%=key %></p>
+      <% end %>
   </div>
 
-  <h3 class="text-center">Ingredients</h3>
+    <h3 class="text-center">Ingredients</h3>
 
-  <div class="col-md-3">
+    <div class="col-md-3">
 
     <h4 class="text-center">Malt</h4>
-    <%@single_response[0]['ingredients']['malt'].each do |key,array|%>
-    <p class="text-center"><%= key['name']%></p>
-    <% end %>
+      <%@single_response[0]['ingredients']['malt'].each do |key,array|%>
+        <p class="text-center"><%= key['name']%></p>
+      <% end %>
 
-  </div>
+    </div>
 
   <div class="col-md-3">
 
     <h4 class="text-center">Hops</h4>
-    <%@single_response[0]['ingredients']['hops'].each do |key,array|%>
-    <p class="text-center"><%= key['name']%></p>
-    <% end %>
+      <%@single_response[0]['ingredients']['hops'].each do |key,array|%>
+        <p class="text-center"><%= key['name']%></p>
+      <% end %>
 
   </div>
 
